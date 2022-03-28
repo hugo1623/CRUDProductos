@@ -1,0 +1,36 @@
+<h1 class="display-3 my-4">LISTA DE PRODUCTOS</h1>
+<hr>
+<div class="btn-group">
+    <a class="btn btn-primary active" aria-current="page" routerLink="/crear">Crear Producto</a>
+</div>
+
+<table class="table my-4">
+    <thead class="table-dark">
+        <tr>
+            <td>Código</td>
+            <td>Nombre</td>
+            <td>Descripción</td>
+            <td>Stock</td>
+            <td>Ver</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.code}}</td>
+            <td>{{producto.name}}</td>
+            <td>{{producto.description}}</td>
+            <td>{{producto.stock}}</td>
+            <td>
+                <i class="fa-solid fa-magnifying-glass" (click)="verProducto(producto)"></i>
+            </td>
+            <td>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </td>
+            <td>
+                <i class="fa-solid fa-trash-can"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
