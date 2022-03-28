@@ -30,4 +30,12 @@ export class ProductosComponent {
   verProducto(producto: any){
     this.router.navigate(['/detalle', producto.id]);
   }
+
+  eliminarProducto(producto: any){
+    if(confirm(`Está seguro que desea eliminar el Producto ${producto.name}?`)){
+      this._productosService.eliminarProducto(producto.id).subscribe(response => {
+        this.listar();
+      });
+    }
+  }
 }

@@ -20,7 +20,9 @@ export class ProductosService {
     return this.http.get(`${this.getUrl()}/products/${id}`);
   }
 
-
+  eliminarProducto(id: number){
+    return this.http.delete(`${this.getUrl()}/products?id=${id}`);
+  }
 
 }
 
